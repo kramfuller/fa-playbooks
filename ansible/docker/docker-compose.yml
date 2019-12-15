@@ -1,12 +1,5 @@
 version: '2'
 services:
-    nginx_img:
-        container_name: ${COMPOSE_PROJECT_NAME}_nginx_con
-        build:
-            context: ./nginx
-            ports:
-                - 80:80
-        
     portainer:
         image: portainer/portainer
         command: -H unix:///var/run/docker.sock
