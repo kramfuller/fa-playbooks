@@ -1,5 +1,4 @@
 version: '2'
- 
 services:
     nginx_img:
         container_name: ${COMPOSE_PROJECT_NAME}_nginx_con
@@ -17,13 +16,13 @@ networks:
             config:
                 - subnet: ${NETWORK_SUBNET}
 
-portainer:
-    image: portainer/portainer
-    command: -H unix:///var/run/docker.sock
-    restart: always
-    ports:
-        - 9001:9000
-        - 8001:8000
-    volumes:
-        - /var/run/docker.sock:/var/run/docker.sock
-        - /data/portainer:/data 
+    portainer:
+        image: portainer/portainer
+        command: -H unix:///var/run/docker.sock
+        restart: always
+        ports:
+            - 9001:9000
+            - 8001:8000
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+            - /data/portainer:/data 
