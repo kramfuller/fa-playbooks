@@ -15,14 +15,3 @@ networks:
             driver: default
             config:
                 - subnet: ${NETWORK_SUBNET}
-
-    portainer:
-        image: portainer/portainer
-        command: -H unix:///var/run/docker.sock
-        restart: always
-        ports:
-            - 9001:9000
-            - 8001:8000
-        volumes:
-            - /var/run/docker.sock:/var/run/docker.sock
-            - /data/portainer:/data 
